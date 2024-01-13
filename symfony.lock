@@ -172,6 +172,9 @@
     "gedmo/doctrine-extensions": {
         "version": "v2.4.36"
     },
+    "gewebe/sylius-vat-plugin": {
+        "version": "v1.3.1"
+    },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
     },

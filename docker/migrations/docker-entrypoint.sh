@@ -21,5 +21,7 @@ done
 php bin/console doctrine:migrations:migrate --no-interaction
 
 if [ "$LOAD_FIXTURES" = "1" ]; then
+    php bin/console vat:install:eu
+
     php bin/console sylius:fixtures:load default_eu --no-interaction
 fi
