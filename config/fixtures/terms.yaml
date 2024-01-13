@@ -1,0 +1,48 @@
+sylius_fixtures:
+    suites:
+        default_eu:
+            fixtures:
+                setono_terms:
+                    options:
+                        custom:
+                            terms_privacy_policy:
+                                code: privacy_policy
+                                name: Privacy policy
+                                slug: privacy-policy
+                                explanation: Accept [link:Privacy policy]
+                                translations:
+                                    de_DE:
+                                        name: Datenschutzerklärung
+                                        slug: datenschutz
+                                created_at: "-3 day"
+                                updated_at: now
+                                channels:
+                                    - FASHION_WEB
+
+                            terms_terms_and_conditions:
+                                code: terms_and_conditions
+                                name: Terms and Conditions
+                                slug: terms-conditions
+                                explanation: Accept [link:Terms and conditions]
+                                translations:
+                                    de_DE:
+                                        name: Allgemeine Geschäftsbedingungen
+                                        slug: agb
+                                created_at: "-3 day"
+                                updated_at: now
+                                channels:
+                                    - FASHION_WEB
+
+                            terms_withdrawal:
+                                code: withdrawal
+                                name: Right of withdrawal
+                                slug: withdrawal
+                                explanation: Accept [link:Right of withdrawal]
+                                translations:
+                                    de_DE:
+                                        name: Widerrufsrecht
+                                        slug: widerruf
+                                created_at: "-3 day"
+                                updated_at: now
+                                channels:
+                                    - FASHION_WEB

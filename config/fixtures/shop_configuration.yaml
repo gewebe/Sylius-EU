@@ -100,6 +100,7 @@ sylius_fixtures:
                                 code: 'dhl'
                                 name: 'DHL'
                                 enabled: true
+                                zone: 'EU'
                                 channels:
                                     - 'FASHION_WEB'
 
