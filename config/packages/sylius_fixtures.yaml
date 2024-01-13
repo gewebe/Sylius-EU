@@ -1,0 +1,9 @@
+imports:
+    - { resource: '../fixtures/shop_configuration.yaml' }
+    - { resource: '../fixtures/tshirt.yaml' }
+    - { resource: '../fixtures/promotion.yaml' }
+    - { resource: '../fixtures/custom_fixtures.yaml' }
+
+parameters:
+    env(SYLIUS_FIXTURES_HOSTNAME): 'localhost'
+    env(SYLIUS_FIXTURES_THEME_NAME): ~

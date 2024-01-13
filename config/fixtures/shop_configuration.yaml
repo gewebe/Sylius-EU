@@ -1,0 +1,147 @@
+
+sylius_fixtures:
+    suites:
+        default_eu:
+            listeners:
+                logger: ~
+            fixtures:
+                locale:
+                    options:
+                        locales:
+                            - 'de_DE'
+                            - 'en_IE'
+                            - 'es_ES'
+                            - 'fr_FR'
+                            - 'it_IT'
+                            - 'pl_PL'
+                currency:
+                    options:
+                        currencies:
+                            - 'EUR'
+                            - 'PLN'
+                geographical:
+                    options:
+                        # eu countries and zone created by vat:install:eu
+                        countries:
+                            - 'CH'
+                            - 'GB'
+                            - 'NO'
+                        zones:
+                            WORLD:
+                                name: 'Rest of the World'
+                                countries:
+                                    - 'CH'
+                                    - 'GB'
+                                    - 'NO'
+
+                menu_taxon:
+                    name: taxon
+                    options:
+                        custom:
+                            category:
+                                code: 'MENU_CATEGORY'
+                                name: 'Category'
+                                translations:
+                                    de_DE:
+                                        name: 'Kategorie'
+                                    en_IE:
+                                        name: 'Category'
+                                    fr_FR:
+                                        name: 'Catégorie'
+
+                channel:
+                    options:
+                        custom:
+                            fashion_web_store:
+                                name: 'Fashion Web Store'
+                                code: 'FASHION_WEB'
+                                locales:
+                                    - '%locale%'
+                                currencies:
+                                    - 'EUR'
+                                enabled: true
+                                hostname: '%env(resolve:SYLIUS_FIXTURES_HOSTNAME)%'
+                                theme_name: '%env(resolve:SYLIUS_FIXTURES_THEME_NAME)%'
+                                shop_billing_data:
+                                    company: 'Sylius EU'
+                                    tax_id: '12/345/67890'
+                                    country_code: 'IE'
+                                    street: 'Test St. 15'
+                                    city: 'Dublin'
+                                    postcode: 'D01'
+                                menu_taxon: 'MENU_CATEGORY'
+                                contact_phone_number: '+353 123 456 789'
+                                contact_email: 'contact@example.com'
+
+                payment_method:
+                    options:
+                        custom:
+                            cash_on_delivery:
+                                code: 'cash_on_delivery'
+                                name: 'Cash on delivery'
+                                channels:
+                                    - 'FASHION_WEB'
+                            bank_transfer:
+                                code: 'bank_transfer'
+                                name: 'Bank transfer'
+                                channels:
+                                    - 'FASHION_WEB'
+                                enabled: true
+
+                shipping_method:
+                    options:
+                        custom:
+                            ups:
+                                code: 'ups'
+                                name: 'UPS'
+                                channels:
+                                    - 'FASHION_WEB'
+                            dhl:
+                                code: 'dhl'
+                                name: 'DHL'
+                                enabled: true
+                                channels:
+                                    - 'FASHION_WEB'
+
+                customer_group:
+                    options:
+                        custom:
+                            retail:
+                                code: 'retail'
+                                name: 'Retail'
+                            wholesale:
+                                code: 'wholesale'
+                                name: 'Wholesale'
+
+                shop_user:
+                    name: 'shop_user'
+                    options:
+                        random: 20
+                        custom:
+                            -   email: 'shop@example.com'
+                                first_name: 'John'
+                                last_name: 'Doe'
+                                password: 'sylius'
+
+                admin_user:
+                    name: 'admin_user'
+                    options:
+                        custom:
+                            -   email: 'sylius@example.com'
+                                username: 'sylius'
+                                password: 'sylius'
+                                enabled: true
+                                locale_code: '%locale%'
+                                first_name: 'John'
+                                last_name: 'Doe'
+                                avatar: '@SyliusCoreBundle/Resources/fixtures/adminAvatars/john.jpg'
+
+                            -   email: 'api@example.com'
+                                username: 'api'
+                                password: 'sylius-api'
+                                enabled: true
+                                locale_code: '%locale%'
+                                first_name: 'Luke'
+                                last_name: 'Brushwood'
+                                api: true
+                                avatar: '@SyliusCoreBundle/Resources/fixtures/adminAvatars/luke.jpg'
