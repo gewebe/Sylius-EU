@@ -62,4 +62,5 @@ return [
     League\FlysystemBundle\FlysystemBundle::class => ['all' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     Gewebe\SyliusVATPlugin\GewebeSyliusVATPlugin::class => ['all' => true],
+    SitemapPlugin\SitemapPlugin::class => ['all' => true],
 ];

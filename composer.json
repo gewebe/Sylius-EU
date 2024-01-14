@@ -27,6 +27,7 @@
         "php": "^8.0",
         "gewebe/sylius-vat-plugin": "^1.3",
         "setono/sylius-terms-plugin": "^1.1",
+        "stefandoorn/sitemap-plugin": "^2.2",
         "sylius/paypal-plugin": "^1.5",
         "sylius/sylius": "^1.12.11",
         "symfony/dotenv": "^5.4 || ^6.0",
