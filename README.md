@@ -1,42 +1,15 @@
-<p align="center">
-    <a href="https://sylius.com" target="_blank">
-        <img src="https://demo.sylius.com/assets/shop/img/logo.png" />
-    </a>
-</p>
 
-<h1 align="center">Sylius Standard Edition</h1>
+# Sylius EU
 
-<p align="center">This is Sylius Standard Edition repository for starting new projects.</p>
+This is a draft for a Sylius EU compliant template for starting new projects.
 
-## About
-
-Sylius is the first decoupled eCommerce framework based on [**Symfony**](http://symfony.com) and [**Doctrine**](http://doctrine-project.org). 
-The highest quality of code, strong testing culture, built-in Agile (BDD) workflow and exceptional flexibility make it the best solution for application tailored to your business requirements. 
-Enjoy being an eCommerce Developer again!
-
-Powerful REST API allows for easy integrations and creating unique customer experience on any device.
-
-We're using full-stack Behavior-Driven-Development, with [phpspec](http://phpspec.net) and [Behat](http://behat.org)
-
-## Documentation
-
-Documentation is available at [docs.sylius.com](http://docs.sylius.com).
+### Features
+- General Data Protection Regulation (GDPR)
+- Terms and conditions
+- Legal information
+- VAT Tax
 
 ## Installation
-
-### Traditional
-```bash
-$ wget http://getcomposer.org/composer.phar
-$ php composer.phar create-project sylius/sylius-standard project
-$ cd project
-$ yarn install
-$ yarn build
-$ php bin/console sylius:install
-$ symfony serve
-$ open http://localhost:8000/
-```
-
-For more detailed instruction please visit [installation chapter in our docs](https://docs.sylius.com/en/latest/book/installation/installation.html).
 
 ### Docker
 
