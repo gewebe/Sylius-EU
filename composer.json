@@ -25,6 +25,7 @@
     ],
     "require": {
         "php": "^8.0",
+        "bitbag/cms-plugin": "^4.0",
         "gewebe/sylius-vat-plugin": "^1.3",
         "setono/sylius-terms-plugin": "^1.1",
         "stefandoorn/sitemap-plugin": "^2.2",
@@ -122,7 +123,8 @@
         ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "ckeditor:install": "symfony-cmd"
         }
     },
     "replace": {

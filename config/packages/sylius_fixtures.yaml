@@ -1,5 +1,6 @@
 imports:
     - { resource: '../fixtures/shop_configuration.yaml' }
+    - { resource: '../fixtures/cms.yaml' }
     - { resource: '../fixtures/terms.yaml' }
     - { resource: '../fixtures/tshirt.yaml' }
     - { resource: '../fixtures/promotion.yaml' }

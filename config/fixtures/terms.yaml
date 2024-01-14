@@ -22,7 +22,7 @@ sylius_fixtures:
                             terms_terms_and_conditions:
                                 code: terms_and_conditions
                                 name: Terms and Conditions
-                                slug: terms-conditions
+                                slug: terms-and-conditions
                                 explanation: Accept [link:Terms and conditions]
                                 translations:
                                     de_DE:

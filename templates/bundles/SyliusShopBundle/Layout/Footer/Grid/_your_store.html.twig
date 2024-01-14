@@ -1,0 +1,9 @@
+<div class="four wide column">
+    <h4 class="ui inverted header">{{ 'sylius.ui.your_store'|trans }}</h4>
+    <div class="ui inverted link list">
+        <a href="{{ bitbag_cms_get_link_for_code('about') }}" class="item">{{ 'sylius.ui.about'|trans }}</a>
+        <a href="{{ path('setono_sylius_terms_show', {'slug': 'terms-and-conditions'}) }}" class="item">{{ 'sylius.ui.terms_and_conditions'|trans }}</a>
+        <a href="{{ path('setono_sylius_terms_show', {'slug': 'privacy-policy'}) }}" class="item">{{ 'sylius.ui.privacy_policy'|trans }}</a>
+        <a href="{{ bitbag_cms_get_link_for_code('legal_notice') }}" class="item">{{ 'Legal Notice'|trans }}</a>
+    </div>
+</div>

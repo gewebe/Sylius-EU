@@ -1,0 +1,268 @@
+
+parameters:
+    fixtures_dir: "%kernel.project_dir%/src/Resources/fixtures"
+
+sylius_fixtures:
+    suites:
+        default_eu:
+            fixtures:
+                section:
+                    options:
+                        custom:
+                            general:
+                                translations:
+                                    en_IE:
+                                        name: "General"
+                            store:
+                                translations:
+                                    en_IE:
+                                        name: "Store"
+                            homepage:
+                                translations:
+                                    en_IE:
+                                        name: "Homepage"
+                            products:
+                                translations:
+                                    en_IE:
+                                        name: "Products"
+                block:
+                    options:
+                        custom:
+                            homepage_products_info:
+                                channels:
+                                    - "FASHION_WEB"
+                                translations:
+                                    en_IE:
+                                        content: |
+                                            <div class="ui info message">
+                                                <i class="em em-arrow_down"></i> Click one of the below products to see what you can do with the blocks in your product view! <i class="em em-arrow_down"></i>
+                                            </div>
+                            section_info_block:
+                                channels:
+                                    - "FASHION_WEB"
+                                sections:
+                                    - "products"
+                                translations:
+                                    en_IE:
+                                        content: |
+                                            <div class="ignored info ui message">
+                                                The block you can see on the left is just a block associated with a section named <code>Products</code>
+                                            </div>
+                                            <p>With this feature, you can render any block you want on the product page, like size table, delivery information, or even promotion banner.</p>
+                                            <p>It's done with a simple controller render:</p>
+                                            <pre>{{ render(path('bitbag_sylius_cms_plugin_shop_block_index_by_section_code', {'sectionCode' : 'products', 'template' : '@BitBagSyliusCmsPlugin/Shop/Block/index.html.twig'})) }}</pre>
+                            product_info_block:
+                                channels:
+                                    - "FASHION_WEB"
+                                products: 5
+                                translations:
+                                    en_IE:
+                                        content: |
+                                            <div class="ignored info ui message">On the other hand, the block on the right is a block associated with specific products.</div>
+                                            <p>This approach can be helpful with displaying some content dedicated to specific products, like size table or product story</p>
+                                            <p>The way you render it is similar to the one from above example:</p>
+                                            <pre>{{ render(path('bitbag_sylius_cms_plugin_shop_block_index_by_product_code', {'productCode' : product.code, 'template' : '@BitBagSyliusCmsPlugin/Shop/Block/index.html.twig'})) }}</pre>
+                            homepage_intro:
+                                channels:
+                                    - "FASHION_WEB"
+                                translations:
+                                    en_IE:
+                                        content: |
+                                            <h3>Blocks</h3>
+                                            <p>
+                                                The left block is rendered with the usage of the particular controller like this:
+                                            </p>
+                                            <pre>
+                                            render(path('bitbag_sylius_cms_plugin_shop_block_render', {'code' : 'homepage_header_image'}))
+                                            </pre>
+                                            <p>
+                                               It also can take template as a parameter, but it's optional. In this case, it works the same as below Twig functions. Sometimes you might want the block to render in a different template, that's where the controller is useful.
+                                             </p>
+                                            <p>
+                                                The other three blocks, including this one you are reading right now, are using Twig helper method.
+                                            </p>
+
+                                            <pre>
+                                            bitbag_cms_render_block('homepage_intro')
+                                            bitbag_cms_render_block('homepage_banner_image_1')
+                                            bitbag_cms_render_block('homepage_banner_image_2')
+                                            </pre>
+                media:
+                    options:
+                        custom:
+                            homepage_header_image:
+                                type: image
+                                path: "%fixtures_dir%/homepage_header.jpeg"
+                                original_name: "homepage_header.jpeg"
+                                channels:
+                                    - "FASHION_WEB"
+                                translations:
+                                    en_IE:
+                                        name: |
+                                            <a href="/en_IE/page/about">This is a linked title</a>
+                                        alt: Homepage image media
+                                        content: |
+                                            <h3>Media description</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            </p>
+                            size_table:
+                                channels:
+                                    - "FASHION_WEB"
+                                type: image
+                                path: "%fixtures_dir%/size_table.jpeg"
+                                original_name: "size_table.jpeg"
+                            sale:
+                                channels:
+                                    - "FASHION_WEB"
+                                type: image
+                                path: "%fixtures_dir%/sale.jpeg"
+                                original_name: "sale.jpeg"
+                                sections:
+                                    - "products"
+                            media_with_parameteres:
+                                channels:
+                                    - "FASHION_WEB"
+                                type: image
+                                path: "%fixtures_dir%/homepage_header.jpeg"
+                                original_name: "homepage_header.jpeg"
+                                translations:
+                                    en_IE:
+                                        name: Custom media template
+                                        content: "This is a custom media template to edit for your needs or create a completely new one."
+                page:
+                    options:
+                        custom:
+                            about:
+                                products: 5
+                                channels:
+                                    - "FASHION_WEB"
+                                sections:
+                                    - "general"
+                                    - "store"
+                                translations:
+                                    en_IE:
+                                        name: "About us"
+                                        slug: "about"
+                                        name_when_linked: "Read more about us"
+                                        description_when_linked: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+                                        content: |
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                                            <ul>
+                                               <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+                                               <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+                                               <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+                                               <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+                                            </ul>
+                                            <p>Pellentesque habitant morbi tristique sene</p>
+                            legal_notice:
+                                channels:
+                                    - "FASHION_WEB"
+                                sections:
+                                    - "general"
+                                    - "store"
+                                translations:
+                                    en_IE:
+                                        name: "Legal Notice"
+                                        slug: "legal-notice"
+                                        name_when_linked: "Legal Notice"
+                                        content: |
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                                            <ul>
+                                               <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+                                               <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+                                               <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+                                               <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+                                            </ul>
+                                            <p>Pellentesque habitant morbi tristique sene</p>
+                            delivery:
+                                channels:
+                                    - "FASHION_WEB"
+                                sections:
+                                    - "general"
+                                    - "store"
+                                translations:
+                                    en_IE:
+                                        name: "Delivery & Shipping"
+                                        slug: "delivery-shipping"
+                                        name_when_linked: "Delivery information"
+                                        description_when_linked: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+                                        content: |
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                                            <ul>
+                                               <li>Free shipping</li>
+                                               <li>Pick-up point</li>
+                                               <li>Bulky products</li>
+                                            </ul>
+                                            <p>Pellentesque habitant morbi tristique sene</p>
+                            payment:
+                                channels:
+                                    - "FASHION_WEB"
+                                sections:
+                                    - "general"
+                                    - "store"
+                                translations:
+                                    en_IE:
+                                        name: "Payment methods"
+                                        slug: "payment-methods"
+                                        name_when_linked: "Payment information"
+                                        description_when_linked: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+                                        content: |
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                                            <ul>
+                                               <li>Bank transfer</li>
+                                               <li>Cash on Delivery</li>
+                                               <li>Credit card</li>
+                                               <li>Mobile Payment</li>
+                                            </ul>
+                                            <p>Pellentesque habitant morbi tristique sene</p>
+                            returns:
+                                channels:
+                                    - "FASHION_WEB"
+                                sections:
+                                    - "general"
+                                    - "store"
+                                translations:
+                                    en_IE:
+                                        name: "Returns & Refunds"
+                                        slug: "returns-refunds"
+                                        name_when_linked: "Returns information"
+                                        description_when_linked: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+                                        content: |
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                                            <ul>
+                                               <li>How do I return my order?</li>
+                                               <li>When will I receive my refund?</li>
+                                               <li>Can I return a used item?</li>
+                                               <li>I have received an item I didn't order</li>
+                                            </ul>
+                                            <p>Pellentesque habitant morbi tristique sene</p>
+                frequently_asked_question:
+                    options:
+                        custom:
+                            place_order:
+                                position: 1
+                                channels:
+                                    - "FASHION_WEB"
+                                translations:
+                                    en_IE:
+                                        question: How can I place an order?
+                                        answer: Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.
+                            delivery_order:
+                                position: 2
+                                channels:
+                                    - "FASHION_WEB"
+                                translations:
+                                    en_IE:
+                                        question: Where is my order?
+                                        answer: At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.
+                            return_order:
+                                position: 3
+                                channels:
+                                    - "FASHION_WEB"
+                                translations:
+                                    en_IE:
+                                        question: How do I return my order?
+                                        answer: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.
