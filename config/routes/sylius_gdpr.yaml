@@ -1,0 +1,2 @@
+synolia_gdpr:
+    resource: "@SynoliaSyliusGDPRPlugin/Resources/config/routes.yaml"
